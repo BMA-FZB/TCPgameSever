@@ -10,7 +10,7 @@ import java.net.Socket;
 public class Server {
 	private static final int SERVER_PORT = 2020;
 	
-	private static final int RightNumber=(int)(Math.random()*10);
+	private static final int RightNumber=(int)(Math.random()*11);
 	private static final int MAX_NUMBER_TRYING=5;
 	
 	
