@@ -10,12 +10,12 @@ import java.net.Socket;
 public class Sender extends Thread {
 	
 
-	private static final int MAX_NUMBER_TRYING=5;
-	private static int RightNumber;
 	ServerSocket serverSocket;
 	Socket socket;
 	int port;
 	
+	private static int RIGHT_NUMBER;
+	private static final int MAX_NUMBER_TRYING=5;
 	
 	private static final int TRY_AGAIN=0;
 	private static final int YOU_WIN=1;
@@ -24,7 +24,7 @@ public class Sender extends Thread {
 	
 
 	public Sender(int rightnumber, int serverPort) throws IOException {
-		this.RightNumber=rightnumber;
+		this.RIGHT_NUMBER=rightnumber;
 		this.socket=new ServerSocket(serverPort).accept();
 		this.port=serverPort;
 		
@@ -34,7 +34,6 @@ public class Sender extends Thread {
 		try {
 			initServer();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
@@ -52,7 +51,7 @@ public class Sender extends Thread {
 		
 	}
 	private static boolean initSend(int receivedMessage, Socket socket, int counter) throws IOException {
-		if(receivedMessage==RightNumber) {
+		if(receivedMessage==RIGHT_NUMBER) {
 			doSendInt(socket, YOU_WIN);
 			return true;
 		}

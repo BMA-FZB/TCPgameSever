@@ -11,13 +11,7 @@ public class Server {
 	private static final int SERVER_PORT = 2020;
 	
 	private static final int RightNumber=(int)(Math.random()*11);
-	private static final int MAX_NUMBER_TRYING=5;
-	
-	
-	private static final int TRY_AGAIN=0;
-	private static final int YOU_WIN=1;
-	private static final int YOU_LOSED=2;
-	
+
 	
 	
 
@@ -50,7 +44,7 @@ public class Server {
 		
 		
 	}
-	
+	/*
 	
 	
 	private static void doSend(Socket socket, String message) throws IOException {
@@ -71,6 +65,6 @@ public class Server {
         DataInputStream inFromServer = new DataInputStream(new BufferedInputStream(socket.getInputStream()));
         return inFromServer.readInt();
     }
-	
+	*/
 
 }
