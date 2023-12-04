@@ -39,31 +39,15 @@ public class Server {
 
     	System.out.println("Server running on :" + SERVER_PORT);
     	
-		Socket socket=new ServerSocket(SERVER_PORT).accept();
+
+    	
+    	Sender sender=new Sender( RightNumber, SERVER_PORT);
+    	sender.start();
+
 		
 		
-		for(int i=1;i<10;i++) {
-		int receivedMessage=doReceiveInt(socket);
-		if(initSend(receivedMessage,socket,i)) {
-			break;
-		}
-		
-		}
 		
 		
-	}
-	private static boolean initSend(int receivedMessage, Socket socket, int counter) throws IOException {
-		if(receivedMessage==RightNumber) {
-			doSendInt(socket, YOU_WIN);
-			return true;
-		}
-		if(counter<MAX_NUMBER_TRYING) {
-			doSendInt(socket, TRY_AGAIN);
-			return false;
-		}
-		else
-			doSendInt(socket, YOU_LOSED);
-			return true;
 		
 	}
 	
