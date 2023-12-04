@@ -41,7 +41,7 @@ public class Sender extends Thread {
 	private void initServer() throws IOException {
 
 ;
-		for(int i=1;i<10;i++) {
+		for(int i=1;i<20;i++) {
 			int receivedMessage=doReceiveInt(socket);
 			if(initSend(receivedMessage,socket,i)) {
 				break;
@@ -49,10 +49,12 @@ public class Sender extends Thread {
 		
 		}
 		
+		
 	}
 	private static boolean initSend(int receivedMessage, Socket socket, int counter) throws IOException {
 		if(receivedMessage==RIGHT_NUMBER) {
 			doSendInt(socket, YOU_WIN);
+			socket.close();
 			return true;
 		}
 		if(counter<MAX_NUMBER_TRYING) {
