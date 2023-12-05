@@ -43,6 +43,7 @@ public class Sender extends Thread {
 ;
 		for(int i=1;i<20;i++) {
 			int receivedMessage=doReceiveInt(socket);
+			
 			if(initSend(receivedMessage,socket,i)) {
 				break;
 			}
