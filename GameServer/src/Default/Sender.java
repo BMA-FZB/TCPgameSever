@@ -23,9 +23,9 @@ public class Sender extends Thread {
 	
 	
 
-	public Sender(int rightnumber, int serverPort) throws IOException {
+	public Sender(int rightnumber, int serverPort,Socket socket) throws IOException {
 		this.RIGHT_NUMBER=rightnumber;
-		this.socket=new ServerSocket(serverPort).accept();
+		this.socket=socket;
 		this.port=serverPort;
 		
 	}
